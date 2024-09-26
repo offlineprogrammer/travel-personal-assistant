@@ -1,18 +1,12 @@
-import {
-  type ClientSchema,
-  a,
-  defineData,
-
-} from "@aws-amplify/backend";
+import { type ClientSchema, a, defineData } from "@aws-amplify/backend";
 import { personalAssistantFunction } from "../functions/personal-assistant/resource";
-
-
-
 
 const schema = a.schema({
   chat: a
     .query()
-    .arguments({ conversation: a.json().required(), systemPrompt: a.string().required() })
+    .arguments({
+      conversation: a.json().required(),
+    })
     .returns(a.string())
     .authorization((allow) => [allow.authenticated()])
     .handler(a.handler.function(personalAssistantFunction)),
