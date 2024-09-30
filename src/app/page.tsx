@@ -16,7 +16,7 @@ export default function Home() {
       >
         <Text fontWeight="bold">{user?.signInDetails?.loginId}</Text>
         <Heading level={3}>Travel Personal Assistant</Heading>
-        <Button onClick={signOut} size="small" variation="link">
+        <Button onClick={signOut} size="small" variation="destructive">
           Sign out
         </Button>
       </Flex>

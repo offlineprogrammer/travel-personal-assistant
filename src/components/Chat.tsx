@@ -68,7 +68,6 @@ export function Chat() {
       role: "user",
       content: [{ text: inputValue }],
     };
-    console.log("set", newUserMessage);
     setConversation((prevConversation) => [
       ...prevConversation,
       newUserMessage,
@@ -103,11 +102,6 @@ export function Chat() {
           placeholder="Type your message..."
           className="input"
           type="text"
-          onKeyUp={(e) => {
-            if (e.key === "Enter") {
-              e.preventDefault();
-            }
-          }}
         />
         <Button
           type="submit"
